@@ -1,4 +1,4 @@
-# mhr-vps-worker 🚀
+# mhr-vps-worker 🌐
 
 [**English**](#english) | [**فارسی**](#persian)
 
