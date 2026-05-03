@@ -1,0 +1,11 @@
+{
+  "name": "mhr-vps-worker",
+  "version": "1.0.0",
+  "description": "Private Node.js worker for MHR CFW to bypass DPI via direct IP.",
+  "main": "server.js",
+  "scripts": {
+    "start": "pm2 start server.js --name mhr-relay --node-args=\"--max-http-header-size=65536\"",
+    "stop": "pm2 delete mhr-relay",
+    "restart": "pm2 restart mhr-relay --node-args=\"--max-http-header-size=65536\""
+  }
+}
