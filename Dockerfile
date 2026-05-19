@@ -16,4 +16,4 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
 
 COPY . /app
 
-CMD ["pm2", "start", "server.js", "--name", "mhr-relay", "--node-args", "--max-http-header-size=65536", "&&", "pm2", "save"]
+CMD ["pm2", "start", "node-worker/server.js", "--name", "mhr-relay", "--node-args", "--max-http-header-size=65536", "&&", "pm2", "save"]
