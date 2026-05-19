@@ -18,5 +18,6 @@ COPY . /app
 
 CMD ["pm2", "start", "node-worker/server.js", "--name", "mhr-relay", "--node-args", "--max-http-header-size=65536"]
 CMD ["pm2", "save"]
+CMD ["cat"]
 
 # pm2 start node-worker/server.js --name mhr-relay --node-args="--max-http-header-size=65536"
