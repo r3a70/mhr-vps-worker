@@ -1,5 +1,9 @@
 FROM ubuntu:24.04
 
+WORKDIR /app
+
+COPY requirements.txt /app
+
 RUN apt update && apt upgrade -y && apt install -y curl && \
 
     # Install Node.js
@@ -10,4 +14,6 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
     python3 -m venv .venv && \
     .venv/bin/pip install -r requirements.txt
 
-CMD [".venv/bin/python", "main.py"]
+COPY . /app
+
+CMD ["pm2", "start", "server.js", "--name", "mhr-relay", "--node-args", "--max-http-header-size=65536", "&&", "pm2", "save"]
