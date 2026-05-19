@@ -12,8 +12,7 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
     npm install pm2 -g && \
     apt install -y python3.12 python3-pip python3-venv && \
     python3 -m venv .venv && \
-    source .venv/bin/activate && \
-    pip install -r requirements.txt
+    .venv/bin/pip install -r /app/requirements.txt
 
 COPY . /app
 
