@@ -16,4 +16,4 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
 
 COPY . /app
 RUN chmod +x /app/entrypoint.sh
-CMD ["/entrypoint.sh"]
+ENTRYPOINT ["/app/entrypoint.sh"]
