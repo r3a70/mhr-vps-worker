@@ -15,5 +15,5 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
     .venv/bin/pip install -r /app/requirements.txt
 
 COPY . /app
-RUN chmod +x /entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
 CMD ["/entrypoint.sh"]
