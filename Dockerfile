@@ -15,10 +15,5 @@ RUN apt update && apt upgrade -y && apt install -y curl && \
     .venv/bin/pip install -r /app/requirements.txt
 
 COPY . /app
-
-# i want to start the node-worker/server.js with pm2 and save the process
-# but & is not working
-
-CMD ["pm2", "start", "node-worker/server.js", "--name", "mhr-relay", "--node-args", "--max-http-header-size=65536", "pm2", "save"]
-
-# pm2 start node-worker/server.js --name mhr-relay --node-args="--max-http-header-size=65536"
+RUN chmod +x /entrypoint.sh
+CMD ["/entrypoint.sh"]
